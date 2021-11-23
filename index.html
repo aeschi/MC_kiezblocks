@@ -7,6 +7,13 @@
     <title>Scrollama: Sticky Side Example</title>
     <meta name="description" content="Scrollama: Sticky Side Example" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -30,34 +37,110 @@
 
 <body>
     <main>
-
-
-
         <section id="intro">
             <h1 class="intro__hed">Scrollytelling Test</h1>
             <p class="intro__dek">
                 Start scrolling to see how it works.
             </p>
         </section>
+
+
         <section id="scrolly">
+            <figure>
+                <p>0</p>
+                <div id="map"></div>
+            </figure>
+
             <article>
                 <div class="step" data-step="1">
-                    <p>STEP 1</p>
-                    <div id="map"></div>
+                    <h2>WAS IST EIN #KIEZBLOCK? // STEP 1</h2>
+                    <p>Ein #Kiezblock ist ein städtisches Quartier ohne Kfz-Durchgangsverkehr.
+                        Die
+                        Straßen im #Kiezblock gehören dem Fuß-, Rad- und öffentlichen
+                        Nahverkehr;
+                        Autos sind nur zu Gast. Alle Gebäude im #Kiezblock sind trotzdem für
+                        Rettungsfahrzeuge, Müllabfuhr,
+                        Lieferverkehr etc. erreichbar, nur eine durchgängige
+                        Querung mit dem Kfz ist nicht mehr möglich. Die übrigen (Wohn-)Straßen
+                        werden zu Grünflächen,
+                        Fußgängerzonen oder mit Radwegen und Straßenmöbeln
+                        versehen. Damit der Kfz-Verkehr nicht einfach auf den Nachbarkiez
+                        ausweicht,
+                        ist es entscheidend, angrenzende Quartiere bei der Gestaltung von
+                        #Kiezblocks
+                        zu berücksichtigen und in die Planung miteinzubeziehen.</p>
                 </div>
                 <div class="step" data-step="2">
-                    <p>STEP 2</p>
+                    <h2>INWIEFERN UTNERSCHEIDET SICH EIN #KIEZBLOCK
+                        VON EINEM KLASSISCHEN BERLINER WOHNVIERTEL? // STEP 2</h2>
+                    <p>Der Durchgangsverkehr wird mittels Einfahrtsperren am Kiezblock-Rand oder
+                        sog.
+                        Diagonalsperren innerhalb des Kiezblocks verhindert. Eine Diagonalsperre
+                        sind
+                        5–6 Poller (oder ähnliche Absperrungen), die diagonal in einer Kreuzung
+                        aufgestellt
+                        werden, so dass der Kfz-Verkehr nur nach rechts bzw. nach links abbiegen
+                        kann; Fußund Radverkehr
+                        können weiterhin in allen Richtungen fahren. Werden Diagonalsperren
+                        oder Einfahrtsperren an wenigen strategischen Kreuzungen bzw. Einfahrten in
+                        einem
+                        #Kiezblock aufgestellt, so verlagern diese den Kfz-Durchgangsverkehr auf
+                        einfache
+                        und effektive Weise auf die Hauptstraßen. Stadtmöbel, wie Ruhebänke oder
+                        Spielgerüste, können
+                        aufgestellt werden.
+                    </p>
+                    <p>
+                        Durch Schwellen kann der Kfz-Verkehr bei der Einfahrt in den #Kiezblock
+                        entschleunigt
+                        werden. An manchen Stellen können Einbahnstraßen diesem Zweck dienen.
+                        Ergänzt
+                        durch verkehrsberuhigende Elemente wie Blumenkästen und Bäume entstehen
+                        Mischnutzungsflächen mit
+                        hoher Aufenthaltsqualität.</p>
                 </div>
                 <div class="step" data-step="3">
-                    <p>STEP 3</p>
+                    <h2>STEP 3</h2>
+                    <img src="data/img/kiezblock.png" width="100%">
                 </div>
                 <div class="step" data-step="4">
-                    <p>STEP 4</p>
+
+                    <h2>WAS BRINGEN #KIEZBLOCKS? // STEP 4</h2>
+                    <p>Weniger Kfz-Verkehr in den Quartieren bedeutet weniger schädliche Luftund
+                        Lärmemissionen. Die
+                        Aufenthaltsqualität für Anwohner*innen und
+                        Anlieger*innen steigt, und die Straßen werden sicherer. Für Fuß-, Rad- und
+                        öffentlichen Nahverkehr werden die Verbindungen attraktiver und
+                        zeitsparender. Auch Lieferverkehre
+                        profitieren von der Verkehrsvermeidung in den Nebenstraßen, zumal der
+                        Durchgangsverkehr wegfällt.
+                        Kiezfremde Kfz-Fahrer*innen
+                        müssen Umwege über die Hauptstraßen einrechnen; die Wege des kiezeigenen
+                        Kfz-Verkehrs wird im schlimmsten Fall einige hundert Meter länger.</p>
+
+                    <h2>WOHER KOMMT DIE IDEE? // STEP 4</h2>
+                    <p>Die Berliner #Kiezblocks nehmen Ideen aus den Superblocks aus Barcelona auf
+                        und kombinieren sie mit den niederländischen „Kompartments”. In der Praxis
+                        bedeutet das, Mischnutzungsflächen innerhalb eines Kiezblocks zu definieren
+                        – für Radfahrende, zu Fuß Gehende und Menschen, die die Straßenräume
+                        wiederbeleben wollen.
+                        Nur Bewohner*innen und Anlieger*innen dürfen innerhalb eines Blocks mit dem
+                        Auto fahren. Der Kfz-Durchgangsverkehr hingegen verläuft auf den dafür
+                        vorgesehenen Hauptstraßen. Die sind – laut Mobilitätsgesetz – so umgebaut,
+                        dass geschützte Radund Fußwege sowie sicheres Kreuzungsdesign auch
+                        ungeschützten Verkehrsteilnehmer*innen ein sicheres und komfortables
+                        Vorankommen ermöglichen.</p>
                 </div>
             </article>
+
         </section>
+        <div>
+            <iframe width="100%" height="300px" frameborder="0" allowfullscreen
+                src="//umap.openstreetmap.fr/da/map/kiezblocks-berlin_496800?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=caption&captionBar=false"></iframe>
+        </div>
         <section id="outro"></section>
     </main>
+
 
     <!-- <div class='debug'></div> -->
     <script src="./js/index.js"></script>

@@ -1,50 +1,67 @@
-var scrolly = document.querySelector('#scrolly');
-var article = scrolly.querySelector('article');
-var step = article.querySelectorAll('.step');
+// using d3 for convenience
+var main = d3.select('main');
+var scrolly = main.select('#scrolly');
+var figure = scrolly.select('figure');
+var article = scrolly.select('article');
+var step = article.selectAll('.step');
 
 // initialize the scrollama
 var scroller = scrollama();
 
-// scrollama event handlers
-function handleStepEnter(response) {
-    // response = { element, direction, index }
-    console.log(response);
-    // add to color to current step
-    response.element.classList.add('is-active');
+// generic window resize listener event
+function handleResize() {
+    // 1. update height of step elements
+    // var stepH = Math.floor(window.innerHeight * 0.75);
+    // step.style('height', stepH + 'px');
+
+    var figureHeight = window.innerHeight / 2;
+    var figureMarginTop = (window.innerHeight - figureHeight) / 2;
+
+    figure.style('height', figureHeight + 'px').style('top', figureMarginTop + 'px');
+
+    // 3. tell scrollama to update new element dimensions
+    scroller.resize();
 }
 
-function handleStepExit(response) {
-    // response = { element, direction, index }
+// scrollama event handlers
+function handleStepEnter(response) {
     console.log(response);
-    // remove color from current step
-    response.element.classList.remove('is-active');
+    // response = { element, direction, index }
+
+    // add color to current step only
+    step.classed('is-active', function (d, i) {
+        return i === response.index;
+    });
+
+    // update graphic based on step
+    figure.select('p').text(response.index + 1);
+}
+
+function setupStickyfill() {
+    d3.selectAll('.sticky').each(function () {
+        Stickyfill.add(this);
+    });
 }
 
 function init() {
-    // set random padding for different step heights (not required)
-    step.forEach(function (step) {
-        var v = 100 + Math.floor((Math.random() * window.innerHeight) / 4);
-        step.style.padding = v + 'px 0px';
-    });
+    setupStickyfill();
 
-    // find the halfway point of the initial viewport height
-    // (it changes on mobile, but by just using the initial value
-    // you remove jumpiness on scroll direction change)
-    var midpoint = Math.floor(window.innerHeight * 0.5) + 'px';
-    // 1. setup the scroller with the bare-bones options
+    // 1. force a resize on load to ensure proper dimensions are sent to scrollama
+    handleResize();
+
+    // 2. setup the scroller passing options
     // 		this will also initialize trigger observations
-    // 2. bind scrollama event handlers (this can be chained like below)
+    // 3. bind scrollama event handlers (this can be chained like below)
     scroller
         .setup({
             step: '#scrolly article .step',
+            offset: 0.33,
             debug: true,
-            offset: midpoint,
         })
-        .onStepEnter(handleStepEnter)
-        .onStepExit(handleStepExit);
+        .onStepEnter(handleStepEnter);
 
-    // 3. setup resize event
-    window.addEventListener('resize', scroller.resize);
+    // setup resize event
+    window.addEventListener('resize', handleResize);
 }
 
 // kick things off

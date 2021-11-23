@@ -3,7 +3,7 @@ var mymap = L.map('map').setView([52.520008, 13.404954], 13);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
+    maxZoom: 20,
     id: 'annaeschi/ckwc1gzrx9fif15o4ao6hmlwb',
     tileSize: 512,
     zoomOffset: -1,
